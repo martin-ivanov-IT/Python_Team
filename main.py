@@ -9,7 +9,7 @@ class MyCustomError(Exception):
         if self.message:
             return 'MyCustomError, {0} '.format(self.message)
         else:
-            return 'MyCustomError has been raised'
+            # return 'MyCustomError has been raised'
 
 
 class OutOfStock(Exception):
