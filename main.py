@@ -27,7 +27,17 @@ class OutOfStock(Exception):
 
 
 class InvalidItemType(Exception):
-    pass
+    def __init__(self, *args):
+        if args:
+            self.message = args[0]
+        else:
+            self.message = None
+
+    def __str__(self):
+        if self.message:
+            return format(self.message)
+        else:
+            return 'Sorry, InvalidItemType'
 
 
 class LockedItem(Exception):
@@ -84,7 +94,7 @@ item = Item("Phone")
 inv = Inventory()
 inv.append(item)
 
-inv.lock(item)
+
 # except InvalidItemType:
 #     print(f"{item.type} is not in invenory and can not be locked")
 
