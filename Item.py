@@ -5,7 +5,6 @@ class Item:
     def __init__(self, item_type):
         self.type = item_type
         self.isLocked = False
-        self.isOnStock = False
 
     def lock(self):
         if self.isLocked:
